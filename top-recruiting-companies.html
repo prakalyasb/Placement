@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Top Companies Placement</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0; /* no gap at top */
+    }
+
+    /* Top bar */
+    .top-bar {
+      position: fixed;   /* stays at top */
+      top: 0;
+      left: 0;
+      height: 50px;
+      width: 100%;
+      background: #0073e6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      z-index: 1000;
+    }
+    .top-bar .left {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: lightgreen;
+      clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+      z-index: 0;
+    }
+    .top-bar .center-text {
+      position: relative;
+      z-index: 1;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Logo bar */
+    .logo-bar {
+      position: fixed;
+      top: 50px; /* sits below top bar */
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      padding: 10px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .logo-group img {
+      height: 50px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      margin-right: 40px; /* leaves gap at right edge */
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      color: #0073e6;
+    }
+
+    h1 {
+      margin-top: 130px; /* ensures heading is below fixed bars */
+      text-align: center;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+    .company-box {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .company-box:hover {
+      transform: scale(1.05);
+    }
+    .company-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* fills box while keeping aspect ratio */
+      padding: 10px;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-align: start;
+      padding: 10px;
+    }
+    .company-box:hover .overlay {
+      opacity: 1;
+    }
+    .overlay h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+    .overlay p {
+      margin: 5px 0 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="left"></div>
+    <div class="center-text">Placement Statistics</div>
+  </div>
+
+  <!-- Logo bar -->
+  <div class="logo-bar">
+    <div class="logo-group">
+      <img src="https://kongu.ac.in/static/media/kec11.2ba08b2f597779bdacad.jpg" alt="KEC Logo">
+      <img src="https://gcpedu.org/wp-content/uploads/2022/06/naac-app1-1.png" alt="NAAC Logo">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.MgMac6C2pRyNa-90Gy4AfwHaHB?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Years in Industry Logo">
+    </div>
+    <div class="nav-links">
+      <a href="https://www.kongu.ac.in" target="_blank">Home</a>
+      <a href="https://www.kongu.ac.in/aboutus.php" target="_blank">About Us</a>
+      <a href="https://www.kongu.ac.in/admission.php" target="_blank">Admission</a>
+    </div>
+  </div>
+
+  <h1>Top Companies - Placement Details</h1>
+  <div class="container">
+    <!-- Example Company -->
+    <div class="company-box">
+      <img src="https://kongu.ac.in/static/media/Presidio_logo.c1611877279c242e62e0.jpg" alt="Presidio Logo">
+      <div class="overlay">
+        <h3>Presidio</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: CSE, CSD, EIE</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.c27B_RjPjCjSst3LWGYdqgHaEe?rs=1&pid=ImgDetMain&o=7&rm=3" alt="JP MorganChase Logo">
+      <div class="overlay">
+        <h3>JP MorganChase</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CSE</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="data:image/png;base64,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" alt="Schneider Logo">
+      <div class="overlay">
+        <h3>Schneider</h3>
+        <p>Placed: 7 students</p>
+        <p>Departments: ECE,EIE</p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://kongu.ac.in/static/media/WhatsApp%20Image%202025-09-16%20at%202.21.06%20PM.34731a4110f0619baa5f.jpeg" alt="Toshiba Logo">
+      <div class="overlay">
+        <h3>Toshiba</h3>
+        <p>Placed: 1 student</p>
+        <p>Departments: AIML</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.oORox-MSupFaRWR9YjquhgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Delta Logo">
+      <div class="overlay">
+        <h3>Delta</h3>
+        <p>Placed: 26 students</p>
+        <p>Departments: EEE,ECE,EIE,MECH,MTRS</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.-iofW2Zrf-OZ9V2bndNAdAHaD3?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Xoriant Logo">
+      <div class="overlay">
+        <h3>Xoriant</h3>
+        <p>Placed: 7 students</p>
+        <p>Departments: CSE, AIDS,AIML</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://kongu.ac.in/static/media/WhatsApp%20Image%202025-10-09%20at%2011.42.54%20AM.3d1708b7141e2a4f607e.jpeg" alt="Virtusa Logo">
+      <div class="overlay">
+        <h3>Virtusa</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: CSE, AIML</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://kongu.ac.in/static/media/3-infosys.8714ad6641f999108f14.jpg" alt="Infosys Logo">
+      <div class="overlay">
+        <h3>Infosys</h3>
+        <p>Placed: 120 students</p>
+        <p>Departments: CSE, EEE, ECE</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://kongu.ac.in/static/media/1-cts.509d5f5f51d1665ebb6e.jpg" alt="Cognizant Logo">
+      <div class="overlay">
+        <h3>Cognizant</h3>
+        <p>Placed: 110 students</p>
+        <p>Departments: CSE, ECE, AIDS,AIML</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.yKW0vY2oXU2fll6NLaYvDgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Deloitte Logo">
+      <div class="overlay">
+        <h3>Deloitte</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: CSE,IT,AIDS,ECE</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://kongu.ac.in/static/media/4-accenture.c976ae8bb5b4f35f87dd.jpg" alt="Accenture Logo">
+      <div class="overlay">
+        <h3>Accenture</h3>
+        <p>Placed: 123 students</p>
+        <p>Departments: CSE, EEE, IT,AIDS,AIML,CSD,ECE,EIE</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://cdn.shopify.com/s/files/1/0558/6413/1764/files/Rewrite_IBM_Logo_Design_History_Evolution_7_1024x1024.jpg?v=1695273904" alt="IBM Logo">
+      <div class="overlay">
+        <h3>IBM</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: CSE,AIML</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://images.seeklogo.com/logo-png/45/2/general-electric-logo-png_seeklogo-456094.png" alt="General Electric Logo">
+      <div class="overlay">
+        <h3>General Electric</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: EEE</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://logowik.com/content/uploads/images/t_applied-materials2003.jpg" alt="Applied Materials Logo">
+      <div class="overlay">
+        <h3>Applied Materials</h3>
+        <p>Placed: 7 students</p>
+        <p>Departments: CSE,IT,AIML,CSD,EEE,EIE</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.5e1IoiuWpoXPJVj-CN_PKQHaEq?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Reliance Industries Logo">
+      <div class="overlay">
+        <h3>Reliance Industries</h3>
+        <p>Placed: 8 students</p>
+        <p>Departments: EIE,MECH</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.ITCTqYolUvASWVXo1VsJawHaHa?w=600&h=600&rs=1&pid=ImgDetMain&o=7&rm=3" alt="NETGEAR Logo">
+      <div class="overlay">
+        <h3>NETGEAR</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: CSE,CSD,ECE</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.0ChT09wk37EX9XN4ibBMQAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Titan Logo">
+      <div class="overlay">
+        <h3>Titan Engineering and Automation Limited</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: EIE,EEE</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.N1uZBBKHG0c8Gk1lgN60ZAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Capgemini Logo">
+      <div class="overlay">
+        <h3>Capgemini</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: MECH,AUTO</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://kongu.ac.in/static/media/tcs.a990ecd605510e8d042e.png" alt="TCSLogo">
+      <div class="overlay">
+        <h3>TCS</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: CSE,MTRS</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://kongu.ac.in/static/media/18-Soliton.537ea5dd4151482ce593.png" alt="Soliton Logo">
+      <div class="overlay">
+        <h3>Soliton</h3>
+        <p>Placed: 10 students</p>
+        <p>Departments: CSE,IT,AIML,ECE,MTRS</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="data:image/png;base64,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" alt="Ignitarium Logo">
+      <div class="overlay">
+        <h3>Ignitarium</h3>
+        <p>Placed: 7 students</p>
+        <p>Departments: CSE,CSD,EEE</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://sget.org/wp-content/uploads/2021/11/tessolve.png" alt="Tessolve Semiconductors Logo">
+      <div class="overlay">
+        <h3>Tessolve Semiconductors</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: ECE </p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://kongu.ac.in/static/media/42-pentafox.199d7bd9c5d81915092b.png" alt="Pentafox Logo">
+      <div class="overlay">
+        <h3>Pentafox</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: CSE,IT,AIML</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://kongu.ac.in/static/media/53-Rubrik.e0448492e7cf2f06e6ae.png" alt="Rubrix Logo">
+      <div class="overlay">
+        <h3>Rubrix</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: CSE,CSD</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="data:image/jpeg;base64,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" alt="Josh Logo">
+      <div class="overlay">
+        <h3>Josh</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: CSE,AIDS</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.2FRdvLdrdCs8wHfhpqwEYQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Mistral Solutions Logo">
+      <div class="overlay">
+        <h3>Mistral Solutions</h3>
+        <p>Placed: 6 students</p>
+        <p>Departments: CSE,ECE</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://kongu.ac.in/static/media/5-zoho.17cbe27913db7bc477d8.png" alt=" Zoho Logo">
+      <div class="overlay">
+        <h3>Zoho</h3>
+        <p>Placed: 12 students</p>
+        <p>Departments:CSE,IT,AIDS,CSD,EEE,EIE </p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://cdn.newswire.com/files/x/bf/31/39c1b54af6cc3c72c34884e0e6d4.png" alt="Survay Sparrow Logo">
+      <div class="overlay">
+        <h3>Survay Sparrow </h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: CSE,CSD</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://www.bairdcapital.com/globalassets/logos/portfolio/504x472-jman.png" alt="JMAN Group Logo">
+      <div class="overlay">
+        <h3>JMAN Group</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: CSE,AIDS</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://i.pinimg.com/originals/d1/a2/c1/d1a2c177abd39a906de3b0beda513a16.png" alt="Core EL Logo">
+      <div class="overlay">
+        <h3>Core EL</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: ECE</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="data:image/jpeg;base64,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" alt="Adrasti Logo">
+      <div class="overlay">
+        <h3>Adrasti</h3>
+        <p>Placed: 10 students</p>
+        <p>Departments: AUTO</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://kongu.ac.in/static/media/WhatsApp%20Image%202025-09-15%20at%2011.35.49%20AM.57bd769557a66b24fcfb.jpeg" alt="Mallow Logo">
+      <div class="overlay">
+        <h3>Mallow</h3>
+        <p>Placed: 8 students</p>
+        <p>Departments: CSE,IT,AIDS,CSD,EEE,MTRS</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="data:image/png;base64,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" alt="CodeMagon Logo">
+      <div class="overlay">
+        <h3>CodeMagon</h3>
+        <p>Placed: 12 students</p>
+        <p>Departments: CSE,IT,AIML</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://kongu.ac.in/static/media/41-Trimble.5da35fe5c9d0c38a89d8.png" alt="Trimble Logo">
+      <div class="overlay">
+        <h3>Trimble</h3>
+        <p>Placed: 12 students</p>
+        <p>Departments: CSE,IT,CSD,AIML,AIDS</p>
+      </div>
+    </div>
+   <div class="company-box">
+      <img src="https://www.malwarebytes.com/wp-content/uploads/sites/2/2023/12/mrcooper_logo.png" alt="Mr.Cooper Logo">
+      <div class="overlay">
+        <h3>Mr.Cooper</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: CSE,IT</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://www.cadence.com/content/dam/cadence-www/global/en_US/images/site-images/silicon-solutions/logos/nbase2.png" alt="Nbase2 Logo">
+      <div class="overlay">
+        <h3>Nbase2</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: CSE,EEE,EIE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_6e1cd1a2015cc4b6670eb99674cbc34d/workhall.png" alt="Workhall Logo">
+      <div class="overlay">
+        <h3>Workhall</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CSD</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://kongu.ac.in/static/media/26-sirius.f735ab1ab7f7bd875c61.png" alt=" Sirius Logo">
+      <div class="overlay">
+        <h3>Sirius</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: AIDS,AIML</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://d3dbet4jug707d.cloudfront.net/wp-content/uploads/2024/02/Rapiddata_new.png" alt="Rapiddata Technologies Logo">
+      <div class="overlay">
+        <h3>Rapiddata Technologies</h3>
+        <p>Placed: 11 students</p>
+        <p>Departments: CSE,AIDS,AIML,CSD,ECE</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://www.winfomi.com/withwhite.jpg" alt="Winfomi Logo">
+      <div class="overlay">
+        <h3>Winfomi</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: CSE,ITCSE</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/C4E0BAQER_9aFpLGrRg/company-logo_200_200/company-logo_200_200/0/1631358978448?e=2147483647&v=beta&t=F6khL4n7kG5AG6WS1TuBLvVrPuoPHAUbs0_IHZI9GbU" alt="Griffyn Robotech Logo">
+      <div class="overlay">
+        <h3>Griffyn Robotech</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="data:image/jpeg;base64,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" alt="Blubridge Technologies Logo">
+      <div class="overlay">
+        <h3>Blubridge Technologies</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: CSE,AIDS,CSD</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/D4E0BAQEiKTSVk59r2Q/company-logo_200_200/B4EZgWrYaAGoAI-/0/1752727128285?e=2147483647&v=beta&t=du3HWWrD1USpSB3xbhFJ7iRA-UD76s49gwET3KGtQUo" alt="Crescent moon solutions Logo">
+      <div class="overlay">
+        <h3>Crescent moon solutions</h3>
+        <p>Placed: 6 students</p>
+        <p>Departments: CSE,AIML,AIDS,CSD</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/D560BAQEq3_HVP52Uuw/company-logo_200_200/B56ZYP5xEnH0AI-/0/1744023524266/leumasware_logo?e=2147483647&v=beta&t=f1BdWUAAiHCgfJ4FDIcC3CTH40Mjy8Yx4NSX_Tbdgzw" alt="Leumasware Logo">
+      <div class="overlay">
+        <h3>Leumasware</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: MECH,MTRS,FT</p>
+      </div>
+    </div>
+  <div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO0s2XICeP6uRe9el1lxlBjuIjE0FGOGoegp_0P0SDqLzhBfUekQ8xr2W5BMtzdR3nQqh-MaW4V8OWbsxICABWoyY8uoeU&s&ec=121585077" alt="Infinox Info-Stark Services Pvt.Ltd Logo">
+      <div class="overlay">
+        <h3>Infinox Info-Stark Services Pvt.Ltd</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CSD</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNd3Nd_WhEel5WwP5hh-pKAnP9jfbStiGQeZFJnWdF9ayIPitBNlQ2UkVkkAyPPMUFyktp-bVEm_m3E7jSJBJTp0ON-0pS&s&ec=121585077 alt=" AppSentinels Logo">
+      <div class="overlay">
+        <h3>AppSentinels</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: AIDS</p>
+      </div>
+    </div>
+   
+    <div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrlufIuU8OwUhblVFhVxIxfBjqjEOwq2gMr3RbqsU5qPwwxQJnTJ4GWNWwEwynm_G69jPV07cxbVV_0k6TivS3iDmBKl0Q&s&ec=121585077 alt=" Valeo India Pvt Ltd Logo">
+      <div class="overlay">
+        <h3>Valeo India Pvt Ltd</h3>
+        <p>Placed: 31 students</p>
+        <p>Departments: CSE,IT,AIDS,AIML,CSD,ECE,MECH,MTRS</p>
+      </div>
+    </div>
+     <div class="company-box">
+      <img src="https://a.storyblok.com/f/313778/1200x1200/1ff571cfe8/securin-thumb.jpg" alt="Securin Logo">
+      <div class="overlay">
+        <h3>Securin</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: AIML</p>
+      </div>
+    </div>
+     <div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0NdomaDJvFUgyPu23EcxD0pX1NpZ9dCAVLqm5h0WPPK_W_O7XvXrVkXfRc4QyBNZzjYJoX-K_I4tDSJEq_Vm31fGlZdsp&s&ec=121585077" alt=" Likan Cleancell Innovations Pvt,Ltd Logo">
+      <div class="overlay">
+        <h3>Likan Cleancell Innovations Pvt,Ltd</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: ECE,EEE</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUgew4fWZF-kwfWZGLXWcjqxbmGLnopI5MiuoYc1tEKf7m1h1wv7mIJtNJfVKFUKtYipV2ptY5BUpiMhPy5SF9HkSNMaw0&s&ec=121585077" alt="Openmynz Logo">
+      <div class="overlay">
+        <h3>Openmynz</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: CSE,AIML,ECE</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://taazakhabarnews.com/wp-content/uploads/2020/12/tvs-motors-logo-1536x864.png" alt="TVS Sri Chakra Logo">
+      <div class="overlay">
+        <h3>TVS Sri Chakra</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments:CHEM </p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.sKnQ42XjaqJskbaRwr2KbQHaC1?rs=1&pid=ImgDetMain&o=7&rm=3" alt="SiMaxTech Logo">
+      <div class="overlay">
+        <h3>SiMaxTech</h3>
+        <p>Placed: 10 students</p>
+        <p>Departments: ECE,EIE</p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.JxroixoiZyeOkpQdqvc0jwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Accura Deldrods Logo">
+      <div class="overlay">
+        <h3>Accura Deldrods</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CHEM</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://iconape.com/wp-content/png_logo_vector/jindal-steel-and-power-logo.png" alt="Jindal Steel Logo">
+      <div class="overlay">
+        <h3>Jindal Steel</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: EIE</p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.y_Ypfa8LbJgXdCV5quU-QQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Enthu Technology Logo">
+      <div class="overlay">
+        <h3>Enthu Technology</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.O-zkU02ebyI8pYlvZhMxfQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="JSE Logo">
+      <div class="overlay">
+        <h3>JSE</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: EEE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://5.imimg.com/data5/SELLER/Logo/2021/2/FX/AU/UY/123553718/logo.jpeg" alt="i6 Tech Labs Logo">
+      <div class="overlay">
+        <h3>i6 Tech Labs</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://images.yourstory.com/cs/images/companies/iamneo-1632891059578.png?fm=auto&ar=1:1&mode=fill&fill=solid&fill-color=fff" alt="IamNeo Logo">
+      <div class="overlay">
+        <h3>IamNeo</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: CSE.IT,CSD</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://robotoai.com/wp-content/uploads/2020/11/cropped-logo-5.png" alt="RobotAI Technologies Logo">
+      <div class="overlay">
+        <h3>RobotAI Technologies</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://kitron.com/assets/website/img/og-img2.png" alt="Kitron India Services Pvt,Ltd Logo">
+      <div class="overlay">
+        <h3>Kitron India Services Pvt,Ltd</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/R.b41618e58725546673958265e9c9eae9?rik=R%2bPPG42Dk2YfhQ&riu=http%3a%2f%2fautolightagency.com%2fwp-content%2fuploads%2f2020%2f04%2fDelphi-TVS-.png&ehk=ceMMf74pu9%2bsvlx8LY8GQGqjjzILS3t2k9esHTcpXaU%3d&risl=&pid=ImgRaw&r=0" alt="Delphi TVS Logo">
+      <div class="overlay">
+        <h3>Delphi TVS</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: MECH,AUTO</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://cartrabbit.io/wp-content/uploads/2022/03/cartrabbit-logo.png" alt="Cartrabbit Technologies Logo">
+      <div class="overlay">
+        <h3>Cartrabbit Technologies</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments:CSE,IT </p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrfWnqh3FY-rnIyWZWNeey-_s5p_reFvRWBQ&s" alt="Genworx.AI Logo">
+      <div class="overlay">
+        <h3>Genworx.AI</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments:CSE,AIDS,AIML </p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/D4E0BAQGMEsqYyKYpvw/company-logo_200_200/company-logo_200_200/0/1738853372648/sago_mrx_logo?e=2147483647&v=beta&t=Q05KiSFRhYRQ1Gb_zGpf9CKlDwceSSph2n7dBpHN9PA" alt="Reading Chocolate (Sago factory ) Logo">
+      <div class="overlay">
+        <h3>Reading Chocolate (Sago factory )</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: FT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT61OBPYgUVwnRB-A9VQ6HguANze6LodKQF9Q&s"alt=" Data Corp -Ed Logo">
+      <div class="overlay">
+        <h3>Data Corp -Ed</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/C4E0BAQFkazXvO9383g/company-logo_200_200/company-logo_200_200/0/1631317682301?e=2147483647&v=beta&t=9kgGUfsQAx3uf2oSSZrnwBb6rZh8szTqfMNyBL9DJLo" alt="Adwik Intellimech -Mds Logo">
+      <div class="overlay">
+        <h3>Adwik Intellimech -Mds</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: MTRS </p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSybR9AWxZcRHfW3wM-PtMS-LptyoVSCPjqLw&s" alt="Calibraint Technologies Logo">
+      <div class="overlay">
+        <h3>Calibraint Technologies</h3>
+        <p>Placed: 7 students</p>
+        <p>Departments: CSE,IT,ECE,EEE,EIE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRH5Ik_dMtlnq2nLO0cMiLrkaWbK_F0LWz_g&s" alt="Logicgo infotech Logo">
+      <div class="overlay">
+        <h3>Logicgo infotech</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: AIML</p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9FEcFwu0qgIG-JNGu0uRQnJxM87dYZffCCQ&s" alt="ERP Roots Logo">
+      <div class="overlay">
+        <h3>ERP Roots</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments:AIDS,EEE </p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://content.jdmagicbox.com/v2/comp/coimbatore/d2/0422px422.x422.231006022956.i2d2/catalogue/brahmarsive-india-pvt-ltd-neelambur-coimbatore-corporate-companies-5ahfgga1uz-250.jpg" alt="Brahmarsive Logo">
+      <div class="overlay">
+        <h3>Brahmarsive</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: CSD</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtmOkpJ0bk_5EdfjC3cnANk4tc0-xYsRGA8A&s" alt="J&F India Pvt,Ltd Logo">
+      <div class="overlay">
+        <h3>J&F India Pvt,Ltd</h3>
+        <p>Placed: 6 students</p>
+        <p>Departments: CIV</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ48EsOtGYemOSO78k0my_ifTVZaad2LI0uNA&s" alt="Radiant Global Technology Logo">
+      <div class="overlay">
+        <h3>Radiant Global Technology</h3>
+        <p>Placed: 6 students</p>
+        <p>Departments: CSE,IT,MTRS,MECH</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://www.hitechcalibration.com/img/hitechcalibration-logo.png" alt="HiTech Calibration Logo">
+      <div class="overlay">
+        <h3>HiTech Calibration</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: EIE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrF-j0Xh4TYwvT683clZR1VtafAoQ-nq56Tw&s" alt="Endava Solution Logo">
+      <div class="overlay">
+        <h3>Endava Solution</h3>
+        <p>Placed: 13 students</p>
+        <p>Departments: CSE,IT,AIDS,AIML</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_1-bqbyD2td8l9TSEfCOkv5KMej78qqh02g&s" alt="SRC Projects Logo">
+      <div class="overlay">
+        <h3>SRC Projects</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: CIV</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://www.cielhr.com/wp-content/uploads/2025/10/COMPANY-GROUP-LOGO-PNG-19.09.25-01.png.webp" alt="CIEL Skills and Careers  Logo">
+      <div class="overlay">
+        <h3>CIEL Skills and Careers </h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CSE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM89K-7EmDhyomEkaks7uOPdLAa75nW4yl8w&s" alt="Green Collar Agritech Solutions Logo">
+      <div class="overlay">
+        <h3>Green Collar Agritech Solutions</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: FT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/C4D0BAQH0Oxb0DsPXRw/company-logo_200_200/company-logo_200_200/0/1630539255753/coreel_technologies_logo?e=2147483647&v=beta&t=RL74V_JsvHQChXdyIHZiT2qfhErbz8vjZvwiXQIAHv0" alt="CoreEL Technologies Logo">
+      <div class="overlay">
+        <h3>CoreEL Technologies</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments:ECE </p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTBAzDly1TdnvJloQIxPKlfNMRaLT915YFUg&s" alt="Platform Science Logo">
+      <div class="overlay">
+        <h3>Platform Science</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: IT,AIDS,AIML</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrUeX9SizAD5x2TWc0cELt5YZPtsWu5kw4KQ&s" alt="Kurium.IO Logo">
+      <div class="overlay">
+        <h3>Kurium.IO</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CSD</p>
+      </div>
+    </div>
+ 
+    <div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0c2POLjkoBD1bTtPqKWwWScG1m1bGkaJEiQ&s" alt="Linkra cables Logo">
+      <div class="overlay">
+        <h3>Linkra cables</h3>
+        <p>Placed: 9 students</p>
+        <p>Departments: ECE,EEE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8VSBgow3kMuuWFNKY2a2rl-aw4gX3slw1fQ&s" alt="Conserve Solutions Logo">
+      <div class="overlay">
+        <h3>Conserve Solutions</h3>
+        <p>Placed: 6 students</p>
+        <p>Departments: EEE,MECH,AUTO</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://framerusercontent.com/images/s7whbU0k6ieGHyOqql9nAeKzWc.png?scale-down-to=512" alt="Careyu Automation Logo">
+      <div class="overlay">
+        <h3>Careyu Automation</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CIV</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsCDjYNplLTjr4cJH4zpFxHCflBiE4W22Bdw&s" alt="Robovision pvt ltd Logo">
+      <div class="overlay">
+        <h3>Robovision pvt ltd</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: IT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-r8NiIKHJ2l0de417vkwGUoeTdm3kzB6nSg&s" alt="System Controls Logo">
+      <div class="overlay">
+        <h3>System Controls</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: ECE,MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5htK8PZ1yhEThqvyOuhk7sPkcKh3VyoQ7xw&s" alt="Addis IT Solutions Logo">
+      <div class="overlay">
+        <h3>Addis IT Solutions</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: ECE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFv21jKB5NAqmjDO_Kb6o4Koj_6tJ2WIpxlA&s" alt="Caliber InterConnect Logo">
+      <div class="overlay">
+        <h3>Caliber InterConnect</h3>
+        <p>Placed: 10 students</p>
+        <p>Departments: ECE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtUm4FtzYu_P7wdLJowSlzjj_Za_WZ7AVgA&s" alt="Integra Connect Logo">
+      <div class="overlay">
+        <h3>Integra Connect</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: AIML</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVpR-YEsGntfevxzX22DT4OyL69Ffa9Tdvsg&s" alt="JGC Logo">
+      <div class="overlay">
+        <h3>JGC</h3>
+        <p>Placed: 8 students</p>
+        <p>Departments:EIE,MTRS,CHEM </p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ45C0UM6FFWDMfBEMYXkpRNvb0EpBFvMpF4A&s" alt="Rently Logo">
+      <div class="overlay">
+        <h3>Rently</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments:CSE </p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsAHpQhNPYiX7w2tHDT94JCcKp0pmVrYHQVw&s" alt="SmartDV Logo">
+      <div class="overlay">
+        <h3>SmartDV</h3>
+        <p>Placed: 8 students</p>
+        <p>Departments:ECE </p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo6kaJ9vKekCYQA1P79F4SJfG8j4o_ICGZZg&s" alt="DCW Logo">
+      <div class="overlay">
+        <h3>DCW</h3>
+        <p>Placed: 7 students</p>
+        <p>Departments: MECH,CHEM</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.w1FOT_cQmOUx-A368H3d9gHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Sublime Structures Logo">
+      <div class="overlay">
+        <h3>Sublime Structures</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CIV</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://i.ytimg.com/vi/HT-n0S8Hx1g/maxresdefault.jpg" alt="HungerBox Logo">
+      <div class="overlay">
+        <h3>HungerBox</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: FT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://vectorseek.com/wp-content/uploads/2023/05/Britannia-Industries-Logo-Vector-300x300.jpg" alt="Britannia RFID Logo">
+      <div class="overlay">
+        <h3>Britannia RFID</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: CSE,ECE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://cdn.everythingrf.com/live/1756_Silex_Technology_637773924781844000_200.png" alt="Silex Technologies Logo">
+      <div class="overlay">
+        <h3>Silex Technologies</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: ECE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://cse.noticebard.com/wp-content/uploads/sites/23/2023/10/TCS-CodeVita-Season-11.jpg" alt="TCS - Codevita Logo">
+      <div class="overlay">
+        <h3>TCS - Codevita</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: CSE,MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://thumbs.dreamstime.com/b/initial-letter-hr-logotype-company-name-blue-circle-swoosh-design-vector-logo-business-identity-203853733.jpg" alt="HR Construction Logo">
+      <div class="overlay">
+        <h3>HR Construction</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CIV</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/OIP.OffU3iFE2j62KNHMWYxKKAAAAA?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Janaki Construction Logo">
+      <div class="overlay">
+        <h3>Janaki Construction</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CIV</p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://clipground.com/images/nexon-logo-4.jpg" alt="Nexont Logo">
+      <div class="overlay">
+        <h3>Nexont</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: CIV</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://www.lecsindia.com/wp-content/uploads/2020/01/logo.jpg" alt="Lakshmi Electrical Control Systems Ltd Logo">
+      <div class="overlay">
+        <h3>Lakshmi Electrical Control Systems Ltd</h3>
+        <p>Placed: 13 students</p>
+        <p>Departments: ECE,EEE,EIE,AUTO</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/OIP.22zANVPrlE9DSD-juyPb_wHaDt?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="L.G.Balakrishnan & Bros. Limited Logo">
+      <div class="overlay">
+        <h3>L.G.Balakrishnan & Bros. Limited</h3>
+        <p>Placed: 58 students</p>
+        <p>Departments: ECE,EEE,MECH,MTRS,AUTO</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.RHqQ4QBUR5z9TBr0R9ipwAAAAA?w=200&h=200&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Greenmile Consultancy Services Pvt Ltd Logo">
+      <div class="overlay">
+        <h3>Greenmile Consultancy Services Pvt Ltd</h3>
+        <p>Placed: 6 students</p>
+        <p>Departments: MECH,CIV</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/OIP.hYjHw2Kqs38A8mdxOD3yawAAAA?w=108&h=108&c=1&bgcl=045c5b&r=0&o=7&pid=ImgRC&rm=3" alt="Flow Control Commune Pvt Ltd, Logo">
+      <div class="overlay">
+        <h3>Flow Control Commune Pvt Ltd,</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.frjd72xgE49jBdOUB9UA-gHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Kanchi Karpooram Limited Logo">
+      <div class="overlay">
+        <h3>Kanchi Karpooram Limited</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: CHEM</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.XusZyXnMHFxZoV8JFikKmgHaDt?w=1280&h=640&rs=1&pid=ImgDetMain&o=7&rm=3" alt="GEA BGR & Group Logo">
+      <div class="overlay">
+        <h3>GEA BGR & Group</h3>
+        <p>Placed: 12 students</p>
+        <p>Departments: MECH,CHEM</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://assets-netstorage.groww.in/stocks-ipo/logos/JAINRESOURCERECYCLINGLIMITED_43065055_94655.png" alt="Jain Resource Recycling Logo">
+      <div class="overlay">
+        <h3>Jain Resource Recycling</h3>
+        <p>Placed: 7 students</p>
+        <p>Departments: EIE,CHEM</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://yt3.ggpht.com/a/AATXAJx0xqbJ0R8Fits_Iz4LRdhP9m9uNxQqOCtS7g=s900-c-k-c0xffffffff-no-rj-mo" alt="Bull Machine Logo">
+      <div class="overlay">
+        <h3>Bull Machine</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: ECE,AUTO</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.kVGRCxF1bMqo6wtGA76c_AAAAA?w=254&h=151&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Zettaone Technologies Logo">
+      <div class="overlay">
+        <h3>Zettaone Technologies</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: ECE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/OIP.oWoNi0PdIBCw9MBQ2RDhPwAAAA?w=108&h=108&c=1&bgcl=6d229e&r=0&o=7&pid=ImgRC&rm=3" alt="Sketch Brahma Logo">
+      <div class="overlay">
+        <h3>Sketch Brahma</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: CSE,ECE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSld1Go-YlLekSVjkDPnMcqTbOlVQugPjWqeA&s" alt="Vintage agro Logo">
+      <div class="overlay">
+        <h3>Vintage agro</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: FT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://www.equitybulls.com/equitybullsadmin/uploads/SKM%20Egg%20Products%20Export%20India%20Limited%203.jpg" alt="SKM Egg products Logo">
+      <div class="overlay">
+        <h3>SKM Egg products</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: FT</p>
+      </div>
+    </div>
+
+    <div class="company-box">
+      <img src="https://www.logo.wine/a/logo/ITC_Limited/ITC_Limited-Logo.wine.svg" alt="ITC Food Division Logo">
+      <div class="overlay">
+        <h3>ITC Food Division</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments:EEE,MECH </p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUJfDgDLUFnw2bnYST_5kYG2g22w2Zn2uV1Q&s" alt="RabbitQR Logo">
+      <div class="overlay">
+        <h3>RabbitQR</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments:IT </p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPwVQJXFRPPjJPbbbvluxgUFsQOKUrqLEwrw&s" alt="Avasoft Logo">
+      <div class="overlay">
+        <h3>Avasoft</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments:AIML,CSD </p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFRtry9UNmZZhQ8HrhR7LBlE0mmc8MFd6OA&s" alt="Tap Academy Logo">
+      <div class="overlay">
+        <h3>Tap Academy</h3>
+        <p>Placed: 16 students</p>
+        <p>Departments:CSE,IT,AIML,AIDS,ECE </p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://www.gecatech.org/wp-content/uploads/2024/04/LOGOTIPO-GECATECH-AC-01_200.png" alt=" GecaTech Logo">
+      <div class="overlay">
+        <h3>GecaTech </h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: IT,AIDS,CSD</p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://www.industrialautomationindia.in/_next/image?url=https%3A%2F%2Fadmin.industrialautomationindia.in%2Fstorage%2Fcompany%2Fcompany-xyOa3iuO69bN9c0iA6jqAWnTSouwnu4UtH5i7ELi.jpg&w=640&q=75" alt="CRP robots Logo">
+      <div class="overlay">
+        <h3>CRP robots</h3>
+        <p>Placed: 8 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPbQ3ATwOC0m8YTV5VvpN_0gP3csBF9zgGtw&s" alt="Lancer International Logo">
+      <div class="overlay">
+        <h3>Lancer International</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments:IT </p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Wabag_logo.svg/960px-Wabag_logo.svg.png" alt="VA Tech Wabag Logo">
+      <div class="overlay">
+        <h3>VA Tech Wabag</h3>
+        <p>Placed: 25 students</p>
+        <p>Departments: EEE,EIE,MECH,CIV,CHEM</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://www.foodtechnetwork.in/wp-content/uploads/2022/08/images-2022-08-16T094850.768.jpeg" alt="Angel Starch&Food Pvt Ltd Logo">
+      <div class="overlay">
+        <h3>Angel Starch&Food Pvt Ltd</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: FT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/OIP.QdXmm6zVjP7n2jcIOckuCgHaHa?w=108&h=108&c=1&bgcl=714f0b&r=0&o=7&pid=ImgRC&rm=3" alt="Madhu Jayanthi International Logo">
+      <div class="overlay">
+        <h3>Madhu Jayanthi International</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: FT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/OIP.M3Ml_WLrgr532meTbAE9RAHaHa?w=108&h=108&c=1&bgcl=fadb21&r=0&o=7&pid=ImgRC&rm=3" alt="April3rdfoods Logo">
+      <div class="overlay">
+        <h3>April3rdfoods</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: FT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/C560BAQExww__GsdugQ/company-logo_200_200/company-logo_200_200/0/1630635895328?e=2147483647&v=beta&t=XikDWW2uSkYpcAVFAEbR5wS3zmGV9wyffhGj7-ZoccY" alt="PRIMAS Bioscience Logo">
+      <div class="overlay">
+        <h3>PRIMAS Bioscience</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: FT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/37d08b76a1684ebae7a5" alt="Grenera Nutrents pvt Ltd Logo">
+      <div class="overlay">
+        <h3>Grenera Nutrents pvt Ltd</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: FT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://digvirtual.com/images/listings/36279final-logo-curves-01.png" alt="Sahuwala Flour Mills Logo">
+      <div class="overlay">
+        <h3>Sahuwala Flour Mills</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: FT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://logodix.com/logo/1716759.png" alt="Likan Logo">
+      <div class="overlay">
+        <h3>Likan</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPgRsb0TBwIfZIrEU1Qy5mqUw37seCBGbEhQ&s" alt="Freezeton Logo">
+      <div class="overlay">
+        <h3>Freezeton</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.C_4ySGBKbrI6d1yDwwS_TAHaEh?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Barry wehmiller Logo">
+      <div class="overlay">
+        <h3>Barry wehmiller</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.Xrfu6895hJwxr0MI8XZGRwAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="NAMIC Industrial Solution Logo">
+      <div class="overlay">
+        <h3>NAMIC Industrial Solution</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://www.liblogo.com/img-logo/ku6847kf2d-kuka-logo-kuka-logo-download-logo-icon-png-svg.png" alt="KUKA India Pvt Ltd Logo">
+      <div class="overlay">
+        <h3>KUKA India Pvt Ltd</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.cYHud8DDdb65nm0LNdFFfwHaDI?rs=1&pid=ImgDetMain&o=7&rm=3" alt="PMEL Pvt. Ltd Logo">
+      <div class="overlay">
+        <h3>PMEL Pvt. Ltd</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.yOTJnPQC0dRANCqJF4xFYwAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Krisam Automation Logo">
+      <div class="overlay">
+        <h3>Krisam Automation</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://logodix.com/logo/1878913.png" alt="ARI Logo">
+      <div class="overlay">
+        <h3>ARI</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: MECH</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.awQHKwHZ5M9MEXveedzt-wHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Janatics Logo">
+      <div class="overlay">
+        <h3>Janatics</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: MECH</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://images.seeklogo.com/logo-png/31/3/fanuc-logo-png_seeklogo-314440.png" alt="Fanuc Logo">
+      <div class="overlay">
+        <h3>Fanuc</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: MECH,MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.0Y6VR72YNedC2pGdA3-9oQHaDZ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="McWane Logo">
+      <div class="overlay">
+        <h3>McWane</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: MECH</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/gkfrrlwlo4dck3vindxj" alt="Aquasub Logo">
+      <div class="overlay">
+        <h3>Aquasub</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: MECH</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.nbvIbv_Lnm9kZI8xL2QRxAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Reliance Industries Logo">
+      <div class="overlay">
+        <h3>Reliance Industries</h3>
+        <p>Placed: 8 students</p>
+        <p>Departments: EEE,EIE,CHEM</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://drillingcontractor.org/wp-content/uploads/2018/08/Kavin.png" alt="Kavin Engineering And Services Pvt,Ltd Logo">
+      <div class="overlay">
+        <h3>Kavin Engineering And Services Pvt,Ltd</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: EIE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.9PMR2HZoOAQzMD3-XwpIEAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="KYB Logo">
+      <div class="overlay">
+        <h3>KYB</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: AUTO</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/D4D0BAQGRNvGBZGesOw/company-logo_200_200/company-logo_200_200/0/1725430476558/harvee_designs_logo?e=2147483647&v=beta&t=05wFUjag-TprJhVGp8w40lWQXzljV0SBP3VwE798-H8" alt="Harvee Designs Logo">
+      <div class="overlay">
+        <h3>Harvee Designs</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: IT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/OIP.9VeRkg6WHbBiMs5RYcOSfQAAAA?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Gradtwin Logo">
+      <div class="overlay">
+        <h3>Gradtwin</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: IT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.9_PzjFjffAeDZ4mpqYIJAgHaEo?w=800&h=500&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Yokogawa Logo">
+      <div class="overlay">
+        <h3>Yokogawa</h3>
+        <p>Placed: 9 students</p>
+        <p>Departments: EIE,CHEM</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/C4E0BAQH4bm5k_f0o7Q/company-logo_200_200/company-logo_200_200/0/1671112712344/bigboon_technologies_private_limited_logo?e=2147483647&v=beta&t=9Sn1UG8AMdVVeSFhl1QVBOzaYglBxFD01zQjscc9q7A" alt=" BigBoon TechnologiesLogo">
+      <div class="overlay">
+        <h3>BigBoon Technologies</h3>
+        <p>Placed: 10 students</p>
+        <p>Departments: AIDS,CSD,ECE,EEE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://fileserver.enrichmoney.in/Content/logos/nse_logo/SPIC.png" alt="SPIC Logo">
+      <div class="overlay">
+        <h3>SPIC</h3>
+        <p>Placed: 9 students</p>
+        <p>Departments: MECH,CHEM</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOjYzeBBUO8KVKR0W3h0hC65Y9fslhjN0p_Q&s" alt="Brakes India Logo">
+      <div class="overlay">
+        <h3>Brakes India</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: EEE,MECH,MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyh_6aqSQKxf0-5ozDx1PH3phMLQDYRU0m8Q&s" alt=" Synapse RoboticsLogo">
+      <div class="overlay">
+        <h3>Synapse Robotics</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/D560BAQHYPJ4yXihR_A/company-logo_200_200/B56ZeofksCH8AI-/0/1750878539674?e=2147483647&v=beta&t=uzXoyEOFy-cT9A3YuRd9zwqvEujKxnyBfAfxDwqEbe8" alt="Imagitive Technology Logo">
+      <div class="overlay">
+        <h3>Imagitive Technology</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: AIML</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9fMFj-ZpwljGxCafYbNfbHEtjV_A5VXvZNg&s" alt="JSW Logo">
+      <div class="overlay">
+        <h3>JSW</h3>
+        <p>Placed: 6 students</p>
+        <p>Departments: EEE,EIE,MECH</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSd0F3gPCUwGUWkjRYTiqVMsG-zdjmEjxvRw&s" alt="Bhawan CyberTex Logo">
+      <div class="overlay">
+        <h3>Bhawan CyberTex</h3>
+        <p>Placed: 9 students</p>
+        <p>Departments: CSE,IT,AIDS,AIML,CSD</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://upload.wikimedia.org/wikipedia/en/b/b8/Rane_Group_Logo.jpg" alt="Rane Logo">
+      <div class="overlay">
+        <h3>Rane</h3>
+        <p>Placed: 8 students</p>
+        <p>Departments: EEE,MECH,MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSos1Ory0zlwLQjmc7nqlMrn5hjcHKdxFOw_g&s" alt="Vintorix(Webberax Solutions) Logo">
+      <div class="overlay">
+        <h3>Vintorix(Webberax Solutions)</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: IT,AIDS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvmtLvr99_JqUV9QayD-pxsq2IbRa5t6JvQA&s" alt="MithilAI Logo">
+      <div class="overlay">
+        <h3>MithilAI</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: CSE,AIDS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/C560BAQHHBElPR3DSOA/company-logo_200_200/company-logo_200_200/0/1676655486977?e=2147483647&v=beta&t=13VzFXiatoCuFNhrfoH2OaaAK_YU2znD01w8azT0IPM" alt="Acmegrade Logo">
+      <div class="overlay">
+        <h3>Acmegrade</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: IT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/D560BAQFlj_b_3gA_DQ/company-logo_200_200/company-logo_200_200/0/1682405719444/harmony_environmental_systems_private_limited_logo?e=2147483647&v=beta&t=l4DGN1GOD51lWnLx0P4W2diEgfKEf9QxaGE7oLRDngk" alt="Harmony Environmental Systems Logo">
+      <div class="overlay">
+        <h3>Harmony Environmental Systems</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CIV</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSixbD7j0voUj9Uze599wRMEZchAq6ToXSnwQ&s" alt="Data Pattern Logo">
+      <div class="overlay">
+        <h3>Data Pattern</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: ECE,EEE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/C4E0BAQE6Vlt3Y3hk5w/company-logo_200_200/company-logo_200_200/0/1630648548329/samvardhana_motherson_reydel_companies_logo?e=2147483647&v=beta&t=Kw-SjDUp7SBh8gVIwrTkCzMwfzcI5moSkI2NDKdl0h0" alt="Motherson-SMRC Logo">
+      <div class="overlay">
+        <h3>Motherson-SMRC</h3>
+        <p>Placed: 8 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKR8uLxobBBRV7KoBoVn_HoWrajR-E3VIatA&s" alt="Pothigai Power Solutions Logo">
+      <div class="overlay">
+        <h3>Pothigai Power Solutions</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: ECE,EEE,EIE</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.VAC_TaGoFWb507NO0ym9hQHaHd?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Vtiger Logo">
+      <div class="overlay">
+        <h3>Vtiger</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: AIML</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://5.imimg.com/data5/SELLER/Logo/2022/3/QP/NI/EO/78999895/logo-file.jpeg" alt="KT Telematics Logo">
+      <div class="overlay">
+        <h3>KT Telematics</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: AIDS,AIML,CSD,ECE,EEE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.3Bzq9xuJCavTsBqQxiSvDAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Besant Technologies Logo">
+      <div class="overlay">
+        <h3>Besant Technologies</h3>
+        <p>Placed: 35 students</p>
+        <p>Departments: CSE,IT,AIDS,AIML,CSD,ECE,EEE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.o13i-yXZarCE_-XliEm2KgHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="WEG Industries Logo">
+      <div class="overlay">
+        <h3>WEG Industries</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: EEE,EIE,MECH</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://image.pitchbook.com/aDtVzdiJRDsg0SVp23JVTBxo8gL1683285422367_200x200" alt="Algomox Private Limited Logo">
+      <div class="overlay">
+        <h3>Algomox Private Limited</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: IT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://cdn.dribbble.com/users/86525/screenshots/1467841/media/f10ca715a86dd40b19b7b3c32e9376cf.png?compress=1&resize=400x300" alt="Unilogic Technologies Logo">
+      <div class="overlay">
+        <h3>Unilogic Technologies</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: CSE,IT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://vectorseek.com/wp-content/uploads/2023/04/HCL-Tech-Logo-Vector.jpg" alt="HCL Tech Logo">
+      <div class="overlay">
+        <h3>HCL Tech</h3>
+        <p>Placed: 12 students</p>
+        <p>Departments: CSE,IT,CSD,MECH</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.jjV009U_sJIDrMEyLF3uwAHaFP?rs=1&pid=ImgDetMain&o=7&rm=3" alt="H&MV Engineering Logo">
+      <div class="overlay">
+        <h3>H&MV Engineering</h3>
+        <p>Placed: 8 students</p>
+        <p>Departments: EEE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/D560BAQFwEr0ev3DuXg/company-logo_200_200/B56ZgJKBKAHsAI-/0/1752500281376/innosynth_logo?e=2147483647&v=beta&t=vAr_zBg68-BrnnYV0ldjS733JkcQA2Fm13_NhG9R5k8" alt="Innosynth Logo">
+      <div class="overlay">
+        <h3>Innosynth</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: IT,ECE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://images.yourstory.com/cs/images/companies/fe5792530670-ZuciLogo-1619683760572.jpg?fm=auto&ar=1:1&mode=fill&fill=solid&fill-color=fff" alt="Zuci Systems Logo">
+      <div class="overlay">
+        <h3>Zuci Systems</h3>
+        <p>Placed: 6 students</p>
+        <p>Departments: CSE,IT,AIDS,ECE,EEE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.FMgij8szWLtXUmMubp1BKAAAAA?w=200&h=200&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Qspiders Logo">
+      <div class="overlay">
+        <h3>Qspiders</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: ECE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://cdn.razorpay.com/logos/H5phCmi29tzssa_large.png" alt="Rinex Logo">
+      <div class="overlay">
+        <h3>Rinex</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: ECE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.glassdoor.com/sqll/737039/anthem-biosciences-squarelogo-1448611683685.png" alt="Anthem BioScience Logo">
+      <div class="overlay">
+        <h3>Anthem BioScience</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CHEM</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://companieslogo.com/img/orig/RAMCOCEM.NS_BIG-e911d28e.png?t=1613408718" alt="Ramco Cements Ltd Logo">
+      <div class="overlay">
+        <h3>Ramco Cements Ltd</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CHEM</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/OIP.HKnXTOCmUdKS1PsVr_qtkQHaHa?w=108&h=108&c=1&bgcl=240ef1&r=0&o=7&pid=ImgRC&rm=3" alt="WTT International Pvt, Ltd Logo">
+      <div class="overlay">
+        <h3>WTT International Pvt, Ltd</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: EIE,CHEM</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzemkm4SGwy2StaHh1n9abc3AsZ0o8wgdGA&s" alt="Emerson Logo">
+      <div class="overlay">
+        <h3>Emerson</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkQELCa1RwI4cW9rXpEX916HQOoJUNcsNHdg&s" alt="Real Tech System Logo">
+      <div class="overlay">
+        <h3>Real Tech System</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: EEE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/C4D0BAQEnoyRr5VAo9w/company-logo_200_200/company-logo_200_200/0/1636264407437?e=2147483647&v=beta&t=ItGCyXKo4c8XqLpc9rFjGZ1kqDm4yvKxeonBlamymlg" alt="Vaap Energy Private Limited Logo">
+      <div class="overlay">
+        <h3>Vaap Energy Private Limited</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: EEE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnYmSjMPTXPBRf_k0aGVOhiz-P2tvOPxulxg&s" alt="SLB Logo">
+      <div class="overlay">
+        <h3>SLB</h3>
+        <p>Placed: 8 students</p>
+        <p>Departments: EIE,MECH,MTRS,CIV,CHEM</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://play-lh.googleusercontent.com/blSkdNo-H4Vv5d7Ljziu9ZSh7PA0qjFalwkoPu2fBkLw70raEA5chhpLp33JpnOfwsIe" alt="Sid's Farm Logo">
+      <div class="overlay">
+        <h3>Sid's Farm</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: MECH</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://archiipedia.com/wp-content/uploads/2019/11/360.png" alt="Ramalingan Construction Logo">
+      <div class="overlay">
+        <h3>Ramalingan Construction</h3>
+        <p>Placed: 6 students</p>
+        <p>Departments: CIV</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://nimir.com.pk/wp-content/uploads/2024/03/NIMIR-New-Logo-1-1024x205.png" alt="NIMIR construction Logo">
+      <div class="overlay">
+        <h3>NIMIR construction</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CIV</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/D560BAQGfZEQm3Ot3sQ/company-logo_200_200/B56ZWKDfN9HoAI-/0/1741777925559/srinsoft_technologies_logo?e=2147483647&v=beta&t=i9gHtz4Mp6hey0UJoImmDHczZhBpLVG1xChMTrhxxXo" alt="Srinsoft Logo">
+      <div class="overlay">
+        <h3>Srinsoft</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: MECH</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://aypolspolymers.com/wp-content/uploads/2024/03/aypols-logo-trans.png" alt="Aypols Logo">
+      <div class="overlay">
+        <h3>Aypols</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: CHEM</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/D560BAQHcT1KwpSFqow/company-logo_200_200/company-logo_200_200/0/1683358896831?e=2147483647&v=beta&t=tQA-mY_Au5FQbITi3ADxjWaEu8pDAVmDegovdQFw3UM" alt="Sri Venkatachalapathy Construction Private Limited Logo">
+      <div class="overlay">
+        <h3>Sri Venkatachalapathy Construction Private Limited</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: CIV</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://timbertruss.com/wp-content/uploads/2019/08/Timber-truss-logo.png" alt="Timbertruss Design Private Limited Logo">
+      <div class="overlay">
+        <h3>Timbertruss Design Private Limited</h3>
+        <p>Placed: 7 students</p>
+        <p>Departments: CIV</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuTyqpuH7NNIXFOQjFDpER-tKVNTbBsQjCEg&s" alt="Amul Logo">
+      <div class="overlay">
+        <h3>Amul</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: FT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://5.imimg.com/data5/SELLER/Logo/2023/6/316718552/KX/YR/LI/1437421/malogo-120x120.jpeg" alt="Manis Powertech Engineer Logo">
+      <div class="overlay">
+        <h3>Manis Powertech Engineer</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: EEE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS98aHjC1wo3L5sV4JtDNkDsBggZfCtjZ0zXg&s" alt="Propel Industries Logo">
+      <div class="overlay">
+        <h3>Propel Industries</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: ECE,EEE,MECH,AUTO</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/C560BAQHB1-IHMItmGw/company-logo_200_200/company-logo_200_200/0/1649397094564/pinnacle_infotech_logo?e=2147483647&v=beta&t=saAk0BWU1kwVqC_CZ4VTSpXxEPKebOo6NLCmZHfaS30" alt="Pinnacle Infotech Logo">
+      <div class="overlay">
+        <h3>Pinnacle Infotech</h3>
+        <p>Placed: 9 students</p>
+        <p>Departments: EEE,MECH,CIV</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://cdn5.f-cdn.com/contestentries/25516/7225175/51c91062441d4_thumbCard.jpg" alt="Codingmart Logo">
+      <div class="overlay">
+        <h3>Codingmart</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CSD</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/D560BAQGZ0AkDSYdLiQ/company-logo_200_200/company-logo_200_200/0/1729256350328/klenty_com_logo?e=2147483647&v=beta&t=uIr7mVEApZjVwyo5fnFIvwh4RtTKqpxmnrd_cU5Ribo" alt="Kently Logo">
+      <div class="overlay">
+        <h3>Kently</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: CSD</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/OIP.HRLDtjdAQI-sz6VXXsGujwHaF1?w=108&h=108&c=1&bgcl=305483&r=0&o=7&pid=ImgRC&rm=3" alt="Trellisys Logo">
+      <div class="overlay">
+        <h3>Trellisys</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: CSD</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://visailabs.com/wp-content/uploads/Visai-Labs-Dimensioner.webp" alt="VisAI Labs Logo">
+      <div class="overlay">
+        <h3>VisAI Labs</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: IT</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/OIP.cAoVmXnRY-RHvtTgcvfNcQAAAA?w=108&h=108&c=1&bgcl=be6c16&r=0&o=7&pid=ImgRC&rm=3" alt="Kaar Technologies Logo">
+      <div class="overlay">
+        <h3>Kaar Technologies</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: AIML</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/ODF.foQ0bYgth0a9k0F5C8bKOg?w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="Pallavaa Group - TGT Role Logo">
+      <div class="overlay">
+        <h3>Pallavaa Group - TGT Role</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: IT,AIML,CSD</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/OIP.uzIXZ30l1q9rJhpRtXPsSQAAAA?w=108&h=108&c=1&bgcl=716ad9&r=0&o=7&pid=ImgRC&rm=3" alt="Base Automation Logo">
+      <div class="overlay">
+        <h3>Base Automation</h3>
+        <p>Placed: 14 students</p>
+        <p>Departments: CSE,ECE,EEE,EIE,MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://www.nsk.com/content/experience-fragments/nsk/gl/en/site/header/master/_jcr_content/root/container_750167515/image.coreimg.svg/1720688568609/header-logo.svg" alt="NSK Bearings Logo">
+      <div class="overlay">
+        <h3>NSK Bearings</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: MECH</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/OIP.sBkBqHtLUjvSstuANvJ2OAHaE7?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Restaurantware Logo">
+      <div class="overlay">
+        <h3>Restaurantware</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: IT,AIML,CSD,MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.glassdoor.com/sqls/2053635/agnitio-systems-squarelogo-1634647724671.png" alt="Agnitio Systems Logo">
+      <div class="overlay">
+        <h3>Agnitio Systems</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: CSE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://th.bing.com/th/id/OIP.F0Al2O4GV4Vuw_m_tj0WZgAAAA?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Anto Global Logo">
+      <div class="overlay">
+        <h3>Anto Global</h3>
+        <p>Placed: 3 students</p>
+        <p>Departments: ECE,EIE,MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/D560BAQHFugoDujcAZg/company-logo_200_200/B56Zc0zY6OGQAM-/0/1748937576547/niral_automation_logo?e=2147483647&v=beta&t=lua1ZkE6jEwybBgOYAKN02hoKiBDnG11ZOQx4ZItkH8" alt="Niral Automation Logo">
+      <div class="overlay">
+        <h3>Niral Automation</h3>
+        <p>Placed: 4 students</p>
+        <p>Departments: ECE,EEE,MTRS</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://www.krishnapowertechnologies.in/logo.png" alt="Krishna Power Technologies Logo">
+      <div class="overlay">
+        <h3>Krishna Power Technologies</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: EEE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.38xxouwc8NiiRveV_N89jQHaDg?rs=1&pid=ImgDetMain&o=7&rm=3" alt="One Assist Technologies Logo">
+      <div class="overlay">
+        <h3>One Assist Technologies</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: EEE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/D560BAQGBWgioRmH-sw/company-logo_200_200/B56Zd.3E6hHQAI-/0/1750180058680?e=2147483647&v=beta&t=GCFGWl6B2zuJMpfeACsp__g9jWVwU5g27YZ4cgPq6No" alt="Mavenly Edutech Pvt,Ltd Logo">
+      <div class="overlay">
+        <h3>Mavenly Edutech Pvt,Ltd</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: CSE,EEE</p>
+      </div>
+    </div>
+    <div class="company-box">
+      <img src="https://southernautomation.com/assets/images/Southern_Automation_Logo.png" alt="Southern Automation Logo">
+      <div class="overlay">
+        <h3>Southern Automation</h3>
+        <p>Placed: 15 students</p>
+        <p>Departments: ECE,EEE,EIE</p>
+      </div>
+    </div>
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/C510BAQGYZ8sbpGjrwg/company-logo_200_200/company-logo_200_200/0/1630609255753/kriyatec_logo?e=2147483647&v=beta&t=ovEK-1bnqSRxyFOvdxx8lQPNLxiRZQlXc-t_VhPiKHk" alt="Kriya Tech Logo">
+      <div class="overlay">
+        <h3>Kriya Tech</h3>
+        <p>Placed: 1 students</p>
+        <p>Departments: EIE</p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://www.sakthiauto.com/images/logo.png" alt="Sakthi Auto Components Ltd Logo">
+      <div class="overlay">
+        <h3>Sakthi Auto Components Ltd</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: MTRS</p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://media.licdn.com/dms/image/v2/C560BAQF98_1wUvo5qQ/company-logo_200_200/company-logo_200_200/0/1662121596325/om_sai_intex_pvt_ltd_logo?e=2147483647&v=beta&t=H3L8N8txKDzjheaQ5IYm0i44pOHSIQPK_b9ITL0oTuk" alt="Om Sai Index Logo">
+      <div class="overlay">
+        <h3>Om Sai Index</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: CIV</p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://tacfert.in/wp-content/themes/tacfert/images/logo-tacfert.png" alt="TAC Tuticorin Logo">
+      <div class="overlay">
+        <h3>TAC Tuticorin</h3>
+        <p>Placed: 6 students</p>
+        <p>Departments: EIE,MECH,CHEM</p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://www.craftsmanautomation.com/images/craftsman-logo.webp" alt="Craftsman  Automation  Limited Logo">
+      <div class="overlay">
+        <h3>Craftsman  Automation  Limited</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: ECE,EEE</p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://edspark.in/images/Edspark%20Logo.png" alt="Edspark Logo">
+      <div class="overlay">
+        <h3>Edspark</h3>
+        <p>Placed: 2 students</p>
+        <p>Departments: CSE,AIDS</p>
+      </div>
+    </div>
+
+<div class="company-box">
+      <img src="https://4.imimg.com/data4/VL/YS/MY-2682293/greenvision-technologies-private-limited-120x120.jpg" alt="Greenvision Technologies Logo">
+      <div class="overlay">
+        <h3>Greenvision Technologies</h3>
+        <p>Placed: 5 students</p>
+        <p>Departments: EEE</p>
+      </div>
+    </div>
+
+</body>
+</html>

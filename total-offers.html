@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Total Offers Graph</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    h2 {
+      text-align: center;
+      color: #0073e6;
+      margin-top: 120px; /* ensures heading is below fixed bars */
+    }
+
+    /* Top bar */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: #0073e6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin: 0;
+      z-index: 1000;
+    }
+    .top-bar .left {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: lightgreen;
+      clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+      z-index: 0;
+    }
+    .top-bar .center-text {
+      position: relative;
+      z-index: 1;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Logo bar */
+    .logo-bar {
+      position: fixed;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      padding: 10px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-group img {
+      height: 45px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 40px;              /* spacing between links */
+      margin-right: 40px;     /* leaves gap from right edge */
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      color: #0073e6;
+      white-space: nowrap;
+    }
+
+    canvas {
+      max-width: 1200px;
+      height: 500px;
+      margin: 20px auto;
+      display: block;
+    }
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #0073e6;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .back-button:hover {
+      background: #005bb5;
+    }
+    .button-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="left"></div>
+    <div class="center-text"></div>
+  </div>
+
+  <!-- Logo bar -->
+  <div class="logo-bar">
+    <div class="logo-group">
+      <img src="https://kongu.ac.in/static/media/kec11.2ba08b2f597779bdacad.jpg" alt="KEC Logo">
+      <img src="https://gcpedu.org/wp-content/uploads/2022/06/naac-app1-1.png" alt="NAAC Logo">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.MgMac6C2pRyNa-90Gy4AfwHaHB?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Years in Industry Logo">
+    </div>
+    <div class="nav-links">
+      <a href="https://www.kongu.ac.in" target="_blank">Home</a>
+      <a href="https://www.kongu.ac.in/aboutus.php" target="_blank">About Us</a>
+      <a href="https://www.kongu.ac.in/admission.php" target="_blank">Admission</a>
+    </div>
+  </div>
+
+  <h2>Total Offers Received (2015–2025)</h2>
+  <canvas id="barChart" width="1200" height="600"></canvas>
+
+  <div class="button-container">
+    <a href="index.html" class="back-button">Back</a>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('barChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'],
+        datasets: [{
+          label: 'Total Offers Received',
+          data: [1463,1398,1055,1326,1345,1533,2249,1951,1612,1693,1415],
+          backgroundColor: [
+            'rgba(0,115,230,0.8)','rgba(0,180,230,0.8)','rgba(0,200,180,0.8)',
+            'rgba(0,150,200,0.8)','rgba(0,115,230,0.8)','rgba(0,180,230,0.8)',
+            'rgba(0,200,180,0.8)','rgba(0,150,200,0.8)','rgba(0,115,230,0.8)',
+            'rgba(0,180,230,0.8)','rgba(0,200,180,0.8)'
+          ],
+          borderRadius: 8,
+          borderWidth: 2,
+          borderColor: '#fff'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Total Offers Received Each Year',
+            font: { size: 20, weight: 'bold' }
+          },
+          tooltip: {
+            backgroundColor: '#0073e6',
+            titleColor: '#fff',
+            bodyColor: '#fff'
+          }
+        },
+        scales: {
+          x: { grid: { display: false } },
+          y: { beginAtZero: true }
+        },
+        animation: {
+          duration: 1500,
+          easing: 'easeOutBounce'
+        }
+      }
+    });
+  </script>
+</body>
+</html>
